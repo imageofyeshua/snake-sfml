@@ -30,12 +30,21 @@
     <ClCompile Include="snakesection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cpptest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="update.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="snakesection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpptest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

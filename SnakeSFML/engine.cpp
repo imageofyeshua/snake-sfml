@@ -9,6 +9,12 @@ Engine::Engine()
 	resolution = Vector2f(windowWidth, windowHeight);
 	window.create(VideoMode(resolution.x, resolution.y), "Snake", Style::Default);
 	window.setFramerateLimit(FPS);
+
+	speed = 2;
+	snakeDirection = Direction::RIGHT;
+
+	timeSinceLastMove = Time::Zero;
+
 	newSnake();
 }
 
@@ -28,10 +34,15 @@ void Engine::addSnakeSection()
 
 void Engine::run()
 {
+	Clock clock;
 	// Main loop - Runs until the window is closed
 	while (window.isOpen())
 	{
+		Time dt = clock.restart();
+		timeSinceLastMove += dt;
+
 		input();
 		draw();
+		update();
 	}
 }

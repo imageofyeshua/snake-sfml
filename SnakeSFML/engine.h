@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <vector>
+#include <deque>
 
 using namespace sf;
 using namespace std;
@@ -19,10 +20,20 @@ private:
 
 	vector<SnakeSection> snake;
 
+	int snakeDirection;
+	deque<int> directionQueue; // queue for direction key presses
+	int speed;
+
+	Time timeSinceLastMove;
+
 public:
+	enum Direction { UP, RIGHT, DOWN, LEFT };
 	Engine();
 
 	void input();
+
+	void addDirection(int newDirection);
+	void update();
 
 	void draw();
 
